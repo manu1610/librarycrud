@@ -9,7 +9,7 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-public class ClectorDTO {
+public class TlectorDTO {
 	private Integer id;
 	private String nombre;
 	private String apellidoPaterno;
