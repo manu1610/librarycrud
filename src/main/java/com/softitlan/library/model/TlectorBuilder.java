@@ -7,17 +7,17 @@ public class TlectorBuilder {
 		TlectorVO origin = tlectorVO;
 		TlectorDTO destin = new TlectorDTO();
 		
-		origin.setId(destin.getId());
-		origin.setNombre(destin.getNombre());
-		origin.setApellidoPaterno(destin.getApellidoPaterno());
-		origin.setApellidoMaterno(destin.getApellidoMaterno());
-		origin.setDireccion(destin.getDireccion());
-		origin.setTelefono(destin.getTelefono());
-		origin.setStatus(destin.getStatus());
-		origin.setCreatedAt(destin.getCreatedAt());
-		origin.setCreatedBy(destin.getCreatedBy());
-		origin.setModifiedAt(destin.getModifiedAt());
-		origin.setModifiedBy(destin.getModifiedBy());
+		destin.setId(origin.getId());
+		destin.setNombre(origin.getNombre());
+		destin.setApellidoPaterno(origin.getApellidoPaterno());
+		destin.setApellidoMaterno(origin.getApellidoMaterno());
+		destin.setDireccion(origin.getDireccion());
+		destin.setTelefono(origin.getTelefono());
+		destin.setStatus(origin.getStatus());
+		destin.setCreatedAt(origin.getCreatedAt());
+		destin.setCreatedBy(origin.getCreatedBy());
+		destin.setModifiedAt(origin.getModifiedAt());
+		destin.setModifiedBy(origin.getModifiedBy());
 		
 		return destin;
 	}
@@ -27,17 +27,17 @@ public class TlectorBuilder {
 		TlectorDTO origin = tlectorDTO;
 		TlectorVO destin = new TlectorVO();
 		
-		origin.setId(destin.getId());
-		origin.setNombre(destin.getNombre());
-		origin.setApellidoPaterno(destin.getApellidoPaterno());
-		origin.setApellidoMaterno(destin.getApellidoMaterno());		
-		origin.setDireccion(destin.getDireccion());
-		origin.setTelefono(destin.getTelefono());
-		origin.setStatus(destin.getStatus());
-		origin.setCreatedAt(destin.getCreatedAt());
-		origin.setCreatedBy(destin.getCreatedBy());
-		origin.setModifiedAt(destin.getModifiedAt());
-		origin.setModifiedBy(destin.getModifiedBy());
+		destin.setId(origin.getId());
+		destin.setNombre(origin.getNombre());
+		destin.setApellidoPaterno(origin.getApellidoPaterno());
+		destin.setApellidoMaterno(origin.getApellidoMaterno());
+		destin.setDireccion(origin.getDireccion());
+		destin.setTelefono(origin.getTelefono());
+		destin.setStatus(origin.getStatus());
+		destin.setCreatedAt(origin.getCreatedAt());
+		destin.setCreatedBy(origin.getCreatedBy());
+		destin.setModifiedAt(origin.getModifiedAt());
+		destin.setModifiedBy(origin.getModifiedBy());
 		
 		return destin;
 	}
