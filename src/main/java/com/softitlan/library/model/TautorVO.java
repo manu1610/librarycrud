@@ -21,12 +21,12 @@ public class TautorVO {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 	private String nombre;
-	private String apellido_paterno;
-	private String apellido_materno;
+	private String apellidoPaterno;
+	private String apellidoMaterno;
 	@Temporal(TemporalType.DATE)
     @JsonFormat(pattern="yyyy-MM-dd")
-    private Date fecha_nacimiento;
-	private String pais_origen;
+    private Date fechaNacimiento;
+	private String paisOrigen;
 	private int status;
     @Temporal(TemporalType.DATE)
     @JsonFormat(pattern="yyyy-MM-dd")
@@ -37,72 +37,140 @@ public class TautorVO {
     private Date modifiedAt;
     private Integer modifiedBy;
     
+    
+	
 	public Integer getId() {
 		return id;
 	}
+
+
+
 	public void setId(Integer id) {
 		this.id = id;
 	}
+
+
+
 	public String getNombre() {
 		return nombre;
 	}
+
+
+
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
-	public String getApellido_paterno() {
-		return apellido_paterno;
+
+
+
+	public String getApellidoPaterno() {
+		return apellidoPaterno;
 	}
-	public void setApellido_paterno(String apellido_paterno) {
-		this.apellido_paterno = apellido_paterno;
+
+
+
+	public void setApellidoPaterno(String apellidoPaterno) {
+		this.apellidoPaterno = apellidoPaterno;
 	}
-	public String getApellido_materno() {
-		return apellido_materno;
+
+
+
+	public String getApellidoMaterno() {
+		return apellidoMaterno;
 	}
-	public void setApellido_materno(String apellido_materno) {
-		this.apellido_materno = apellido_materno;
+
+
+
+	public void setApellidoMaterno(String apellidoMaterno) {
+		this.apellidoMaterno = apellidoMaterno;
 	}
-	public Date getFecha_nacimiento() {
-		return fecha_nacimiento;
+
+
+
+	public Date getFechaNacimiento() {
+		return fechaNacimiento;
 	}
-	public void setFecha_nacimiento(Date fecha_nacimiento) {
-		this.fecha_nacimiento = fecha_nacimiento;
+
+
+
+	public void setFechaNacimiento(Date fechaNacimiento) {
+		this.fechaNacimiento = fechaNacimiento;
 	}
-	public String getPais_origen() {
-		return pais_origen;
+
+
+
+	public String getPaisOrigen() {
+		return paisOrigen;
 	}
-	public void setPais_origen(String pais_origen) {
-		this.pais_origen = pais_origen;
+
+
+
+	public void setPaisOrigen(String paisOrigen) {
+		this.paisOrigen = paisOrigen;
 	}
+
+
+
 	public int getStatus() {
 		return status;
 	}
+
+
+
 	public void setStatus(int status) {
 		this.status = status;
 	}
+
+
+
 	public Date getCreatedAt() {
 		return createdAt;
 	}
+
+
+
 	public void setCreatedAt(Date createdAt) {
 		this.createdAt = createdAt;
 	}
+
+
+
 	public int getCreatedBy() {
 		return createdBy;
 	}
+
+
+
 	public void setCreatedBy(int createdBy) {
 		this.createdBy = createdBy;
 	}
+
+
+
 	public Date getModifiedAt() {
 		return modifiedAt;
 	}
+
+
+
 	public void setModifiedAt(Date modifiedAt) {
 		this.modifiedAt = modifiedAt;
 	}
+
+
+
 	public Integer getModifiedBy() {
 		return modifiedBy;
 	}
+
+
+
 	public void setModifiedBy(Integer modifiedBy) {
 		this.modifiedBy = modifiedBy;
 	}
+
+
+
 	@Override
     public String toString() {
         ObjectMapper mapper = new ObjectMapper();
