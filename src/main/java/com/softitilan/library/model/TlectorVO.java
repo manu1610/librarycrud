@@ -1,4 +1,5 @@
-package com.softitlan.library.model;
+package com.softitilan.library.model;
+
 import java.io.Serializable;
 import java.util.Date;
 
@@ -15,20 +16,19 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 @Entity
-@Table(name="tautor")
-public class TautorVO {
+@Table(name="tlector")
+public class TlectorVO implements Serializable{
+	
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+	private Integer id;
 	private String nombre;
 	private String apellidoPaterno;
 	private String apellidoMaterno;
-	@Temporal(TemporalType.DATE)
-    @JsonFormat(pattern="yyyy-MM-dd")
-    private Date fechaNacimiento;
-	private String paisOrigen;
+	private String direccion;
+	private String telefono;
 	private int status;
-    @Temporal(TemporalType.DATE)
+	@Temporal(TemporalType.DATE)
     @JsonFormat(pattern="yyyy-MM-dd")
     private Date createdAt;
 	private int createdBy;
@@ -36,12 +36,14 @@ public class TautorVO {
     @JsonFormat(pattern="yyyy-MM-dd")
     private Date modifiedAt;
     private Integer modifiedBy;
-    
-    
 	
+    
+    
+    
 	public Integer getId() {
 		return id;
 	}
+
 
 
 
@@ -51,9 +53,11 @@ public class TautorVO {
 
 
 
+
 	public String getNombre() {
 		return nombre;
 	}
+
 
 
 
@@ -63,9 +67,11 @@ public class TautorVO {
 
 
 
+
 	public String getApellidoPaterno() {
 		return apellidoPaterno;
 	}
+
 
 
 
@@ -75,9 +81,11 @@ public class TautorVO {
 
 
 
+
 	public String getApellidoMaterno() {
 		return apellidoMaterno;
 	}
+
 
 
 
@@ -87,27 +95,32 @@ public class TautorVO {
 
 
 
-	public Date getFechaNacimiento() {
-		return fechaNacimiento;
+
+	public String getDireccion() {
+		return direccion;
 	}
 
 
 
-	public void setFechaNacimiento(Date fechaNacimiento) {
-		this.fechaNacimiento = fechaNacimiento;
+
+	public void setDireccion(String direccion) {
+		this.direccion = direccion;
 	}
 
 
 
-	public String getPaisOrigen() {
-		return paisOrigen;
+
+	public String getTelefono() {
+		return telefono;
 	}
 
 
 
-	public void setPaisOrigen(String paisOrigen) {
-		this.paisOrigen = paisOrigen;
+
+	public void setTelefono(String telefono) {
+		this.telefono = telefono;
 	}
+
 
 
 
@@ -117,9 +130,11 @@ public class TautorVO {
 
 
 
+
 	public void setStatus(int status) {
 		this.status = status;
 	}
+
 
 
 
@@ -129,9 +144,11 @@ public class TautorVO {
 
 
 
+
 	public void setCreatedAt(Date createdAt) {
 		this.createdAt = createdAt;
 	}
+
 
 
 
@@ -141,9 +158,11 @@ public class TautorVO {
 
 
 
+
 	public void setCreatedBy(int createdBy) {
 		this.createdBy = createdBy;
 	}
+
 
 
 
@@ -153,9 +172,11 @@ public class TautorVO {
 
 
 
+
 	public void setModifiedAt(Date modifiedAt) {
 		this.modifiedAt = modifiedAt;
 	}
+
 
 
 
@@ -165,9 +186,11 @@ public class TautorVO {
 
 
 
+
 	public void setModifiedBy(Integer modifiedBy) {
 		this.modifiedBy = modifiedBy;
 	}
+
 
 
 
@@ -180,4 +203,5 @@ public class TautorVO {
             return e.getMessage();
         }
     }
+    
 }

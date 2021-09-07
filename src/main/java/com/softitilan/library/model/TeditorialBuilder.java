@@ -1,4 +1,4 @@
-package com.softitlan.library.model;
+package com.softitilan.library.model;
 
 public class TeditorialBuilder {
 	private TeditorialBuilder() {
