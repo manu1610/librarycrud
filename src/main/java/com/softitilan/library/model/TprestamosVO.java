@@ -20,139 +20,129 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 @Entity
 @Table(name = "tprestamos")
 public class TprestamosVO implements Serializable {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer Id;
+    @ManyToOne
+    @JoinColumn(name = "id_lector", referencedColumnName = "id")
+    private TlectorVO idLector;
+    @ManyToOne
+    @JoinColumn(name = "id_libro", referencedColumnName = "id")
+    private TlibroVO idLibro;
+    @Temporal(TemporalType.DATE)
+    @JsonFormat(pattern = "yyyy-MM-dd")
+    private Date fechaPrestamo;
+    @Temporal(TemporalType.DATE)
+    @JsonFormat(pattern = "yyyy-MM-dd")
+    private Date fechaEntregaEsperada;
+    @Temporal(TemporalType.DATE)
+    @JsonFormat(pattern = "yyyy-MM-dd")
+    private Date fechaEntregaRealizada;
+    private int status;
+    @Temporal(TemporalType.DATE)
+    @JsonFormat(pattern = "yyyy-MM-dd")
+    private Date createdAt;
+    private int createdBy;
+    @Temporal(TemporalType.DATE)
+    @JsonFormat(pattern = "yyyy-MM-dd")
+    private Date modifiedAt;
+    private int modifiedBy;
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer Id;
-	@ManyToOne
-	@JoinColumn(name = "id_lector", referencedColumnName = "id")
-	private TlectorVO idLector;
-	@ManyToOne
-	@JoinColumn(name = "id_libro", referencedColumnName = "id")
-	private TlibroVO idLibro;
-	@Temporal(TemporalType.DATE)
-	@JsonFormat(pattern = "yyyy-MM-dd")
-	private Date fechaPrestamo;
-	@Temporal(TemporalType.DATE)
-	@JsonFormat(pattern = "yyyy-MM-dd")
-	private Date fechaEntregaEsperada;
-	@Temporal(TemporalType.DATE)
-	@JsonFormat(pattern = "yyyy-MM-dd")
-	private Date fechaEntregaRealizada;
-	private int status;
-	private int cantidadLibros;
-	@Temporal(TemporalType.DATE)
-	@JsonFormat(pattern = "yyyy-MM-dd")
-	private Date createdAt;
-	private int createdBy;
-	@Temporal(TemporalType.DATE)
-	@JsonFormat(pattern = "yyyy-MM-dd")
-	private Date modifiedAt;
-	private int modifiedBy;
+    public Integer getId() {
+        return Id;
+    }
 
-	public Integer getId() {
-		return Id;
-	}
+    public void setId(Integer id) {
+        Id = id;
+    }
 
-	public void setId(Integer id) {
-		Id = id;
-	}
+    public TlectorVO getIdLector() {
+        return idLector;
+    }
 
-	public TlectorVO getIdLector() {
-		return idLector;
-	}
+    public void setIdLector(TlectorVO idLector) {
+        this.idLector = idLector;
+    }
 
-	public void setIdLector(TlectorVO idLector) {
-		this.idLector = idLector;
-	}
+    public TlibroVO getIdLibro() {
+        return idLibro;
+    }
 
-	public TlibroVO getIdLibro() {
-		return idLibro;
-	}
+    public void setIdLibro(TlibroVO idLibro) {
+        this.idLibro = idLibro;
+    }
 
-	public void setIdLibro(TlibroVO idLibro) {
-		this.idLibro = idLibro;
-	}
+    public Date getFechaPrestamo() {
+        return fechaPrestamo;
+    }
 
-	public Date getFechaPrestamo() {
-		return fechaPrestamo;
-	}
+    public void setFechaPrestamo(Date fechaPrestamo) {
+        this.fechaPrestamo = fechaPrestamo;
+    }
 
-	public void setFechaPrestamo(Date fechaPrestamo) {
-		this.fechaPrestamo = fechaPrestamo;
-	}
+    public Date getFechaEntregaEsperada() {
+        return fechaEntregaEsperada;
+    }
 
-	public Date getFechaEntregaEsperada() {
-		return fechaEntregaEsperada;
-	}
+    public void setFechaEntregaEsperada(Date fechaEntregaEsperada) {
+        this.fechaEntregaEsperada = fechaEntregaEsperada;
+    }
 
-	public void setFechaEntregaEsperada(Date fechaEntregaEsperada) {
-		this.fechaEntregaEsperada = fechaEntregaEsperada;
-	}
+    public Date getFechaEntregaRealizada() {
+        return fechaEntregaRealizada;
+    }
 
-	public Date getFechaEntregaRealizada() {
-		return fechaEntregaRealizada;
-	}
+    public void setFechaEntregaRealizada(Date fechaEntregaRealizada) {
+        this.fechaEntregaRealizada = fechaEntregaRealizada;
+    }
 
-	public void setFechaEntregaRealizada(Date fechaEntregaRealizada) {
-		this.fechaEntregaRealizada = fechaEntregaRealizada;
-	}
+    public int getStatus() {
+        return status;
+    }
 
-	public int getStatus() {
-		return status;
-	}
+    public void setStatus(int status) {
+        this.status = status;
+    }
 
-	public void setStatus(int status) {
-		this.status = status;
-	}
+    public Date getCreatedAt() {
+        return createdAt;
+    }
 
-	public int getCantidadLibros() {
-		return cantidadLibros;
-	}
+    public void setCreatedAt(Date createdAt) {
+        this.createdAt = createdAt;
+    }
 
-	public void setCantidadLibros(int cantidadLibros) {
-		this.cantidadLibros = cantidadLibros;
-	}
+    public int getCreatedBy() {
+        return createdBy;
+    }
 
-	public Date getCreatedAt() {
-		return createdAt;
-	}
+    public void setCreatedBy(int createdBy) {
+        this.createdBy = createdBy;
+    }
 
-	public void setCreatedAt(Date createdAt) {
-		this.createdAt = createdAt;
-	}
+    public Date getModifiedAt() {
+        return modifiedAt;
+    }
 
-	public int getCreatedBy() {
-		return createdBy;
-	}
+    public void setModifiedAt(Date modifiedAt) {
+        this.modifiedAt = modifiedAt;
+    }
 
-	public void setCreatedBy(int createdBy) {
-		this.createdBy = createdBy;
-	}
+    public int getModifiedBy() {
+        return modifiedBy;
+    }
 
-	public Date getModifiedAt() {
-		return modifiedAt;
-	}
+    public void setModifiedBy(int modifiedBy) {
+        this.modifiedBy = modifiedBy;
+    }
 
-	public void setModifiedAt(Date modifiedAt) {
-		this.modifiedAt = modifiedAt;
-	}
-
-	public int getModifiedBy() {
-		return modifiedBy;
-	}
-
-	public void setModifiedBy(int modifiedBy) {
-		this.modifiedBy = modifiedBy;
-	}
-
-	@Override
-	public String toString() {
-		ObjectMapper mapper = new ObjectMapper();
-		try {
-			return mapper.writeValueAsString(this);
-		} catch (JsonProcessingException e) {
-			return e.getMessage();
-		}
-	}
+    @Override
+    public String toString() {
+        ObjectMapper mapper = new ObjectMapper();
+        try {
+            return mapper.writeValueAsString(this);
+        } catch (JsonProcessingException e) {
+            return e.getMessage();
+        }
+    }
 }
