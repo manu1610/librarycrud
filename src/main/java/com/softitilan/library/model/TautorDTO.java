@@ -1,7 +1,9 @@
-package com.softitlan.library.model;
-
+package com.softitilan.library.model;
 import java.util.Date;
 
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
@@ -9,15 +11,17 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-public class TlectorDTO {
-	private Integer id;
+public class TautorDTO {
+    private Integer id;
 	private String nombre;
 	private String apellidoPaterno;
 	private String apellidoMaterno;
-	private String direccion;
-	private String telefono;
-	private int status;
 	@Temporal(TemporalType.DATE)
+    @JsonFormat(pattern="yyyy-MM-dd")
+    private Date fechaNacimiento;
+	private String paisOrigen;
+	private int status;
+    @Temporal(TemporalType.DATE)
     @JsonFormat(pattern="yyyy-MM-dd")
     private Date createdAt;
 	private int createdBy;
@@ -25,8 +29,8 @@ public class TlectorDTO {
     @JsonFormat(pattern="yyyy-MM-dd")
     private Date modifiedAt;
     private Integer modifiedBy;
-    
 	
+    
     
 	public Integer getId() {
 		return id;
@@ -76,26 +80,26 @@ public class TlectorDTO {
 
 
 
-	public String getDireccion() {
-		return direccion;
+	public Date getFechaNacimiento() {
+		return fechaNacimiento;
 	}
 
 
 
-	public void setDireccion(String direccion) {
-		this.direccion = direccion;
+	public void setFechaNacimiento(Date fechaNacimiento) {
+		this.fechaNacimiento = fechaNacimiento;
 	}
 
 
 
-	public String getTelefono() {
-		return telefono;
+	public String getPaisOrigen() {
+		return paisOrigen;
 	}
 
 
 
-	public void setTelefono(String telefono) {
-		this.telefono = telefono;
+	public void setPaisOrigen(String paisOrigen) {
+		this.paisOrigen = paisOrigen;
 	}
 
 
@@ -169,5 +173,4 @@ public class TlectorDTO {
             return e.getMessage();
         }
     }
-    
 }
