@@ -3,13 +3,7 @@ package com.softitilan.library.model;
 import java.io.Serializable;
 import java.util.Date;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
+import javax.persistence.*;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -17,6 +11,11 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 @Entity
 @Table(name = "ccategoria")
+@NamedQueries({
+        @NamedQuery(name = "CcategoriaVO.findAllActive", query = "SELECT c FROM CcategoriaVO c WHERE c.status = 1"),
+        @NamedQuery(name = "CcategoriaVO.findByType", query = "SELECT c FROM CcategoriaVO c WHERE c.tipo = :type and c.status = 1"),
+
+})
 public class CcategoriaVO implements Serializable {
 
     @Id
