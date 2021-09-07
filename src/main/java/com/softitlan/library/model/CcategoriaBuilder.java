@@ -6,8 +6,8 @@ public class CcategoriaBuilder {
 		
 	}
 	
-	public static CcategoriaDTO fromVO (CcategoriaVO courseVO){
-		CcategoriaVO origin = courseVO;
+	public static CcategoriaDTO fromVO (CcategoriaVO ccategoriaVO){
+		CcategoriaVO origin = ccategoriaVO;
         CcategoriaDTO destin = new CcategoriaDTO();
 
         destin.setId(origin.getId());
@@ -18,8 +18,8 @@ public class CcategoriaBuilder {
         return destin;
     }
 
-    public static CcategoriaVO fromDTO (CcategoriaDTO courseDTO){
-    	CcategoriaDTO origin = courseDTO;
+    public static CcategoriaVO fromDTO (CcategoriaDTO ccategoriaDTO){
+    	CcategoriaDTO origin = ccategoriaDTO;
         CcategoriaVO destin = new CcategoriaVO();
 
         destin.setId(origin.getId());
