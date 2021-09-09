@@ -11,10 +11,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.Map;
 
 @RestController
 @RequestMapping("/ccategoria")
+
 public class CcategoriaEndpoint {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(CcategoriaEndpoint.class);
@@ -62,13 +64,13 @@ public class CcategoriaEndpoint {
     }
 
     @GetMapping("/findAll")
-    public ResponseEntity<ResponseBody<PagedList<CcategoriaDTO>>> findAll(@RequestParam("start") int start, @RequestParam("limit") int limit){
+    public ResponseEntity<ResponseBody<List<CcategoriaDTO>>> findAll(@RequestParam("start") int start, @RequestParam("limit") int limit){
         LOGGER.debug(">>>> findAll <<<< start: {} limit: {}",start,limit);
-        ResponseEntity<ResponseBody<PagedList<CcategoriaDTO>>> response=null;
+        ResponseEntity<ResponseBody<List<CcategoriaDTO>>> response=null;
         PagedList<CcategoriaDTO> ccategoriaList=null;
         try{
             ccategoriaList = ccategoriaService.findAllPagedList(start,limit);
-            response=Utils.response200OK(ccategoriaList);
+            response=Utils.response200OK(ccategoriaList.getList(), ccategoriaList.getTotal());
         }catch (Exception e){
             response=Utils.handle(e,"Error al encontrar la lista");
         }
